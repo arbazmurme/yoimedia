@@ -8,6 +8,7 @@ const Cursor = dynamic(() => import('./components/ui/Cursor'), { ssr: false });
 const Loader = dynamic(() => import('./components/ui/Loader'), { ssr: false });
 const Navbar = dynamic(() => import('./components/ui/Navbar'), { ssr: false });
 const Footer = dynamic(() => import('./components/ui/Footer'), { ssr: false });
+import RocketLaunch from './components/ui/RocketLaunch';
 
 // Section components
 import Hero from './components/sections/Hero';
@@ -44,6 +45,9 @@ export default function Home() {
 
       {/* Custom cursor */}
       <Cursor />
+
+      {/* Retro Rocket Launch Animation on Page Load */}
+      {loaded && <RocketLaunch trigger={loaded} />}
 
       {/* Loading screen */}
       <Loader onComplete={handleLoaderComplete} />
